@@ -1,601 +1,1456 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLAREO® | Proposta Commerciale - Effegomma S.r.l.</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            background-color: #0A0A0A; color: #FFFFFF;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6; letter-spacing: -0.3px;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700; letter-spacing: -1px;
-        }
-        a { color: #E8430A; text-decoration: none; transition: color 0.3s ease; }
-        a:hover { color: #FF6B00; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flareo × Effegomma — Proposta Commerciale</title>
+<meta name="description" content="Proposta Flareo Studio per il redesign del sito web Effegomma. 25+ anni di vulcanizzazione meritano una presenza digitale tecnica e performante.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<style>
+/* ============================
+   PROPOSTA · EFFEGOMMA
+   Same design tokens as effegomma-prototype.html
+   Dark industrial · Inter + JetBrains Mono · Red #C41E2A
+   ============================ */
+:root {
+  --red: #C41E2A;
+  --red-light: #E63946;
+  --red-dark: #9B1520;
+  --red-bg: rgba(196,30,42,0.12);
+  --red-border: rgba(196,30,42,0.25);
 
-        /* ============ HEADER ============ */
-        header {
-            padding: 60px 40px; text-align: center;
-            border-bottom: 1px solid rgba(232, 67, 10, 0.2);
-            margin-bottom: 80px; animation: fadeIn 0.8s ease;
-        }
-        .logo-text {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700; margin-bottom: 10px; letter-spacing: -2px;
-        }
-        .logo-accent { color: #E8430A; }
-        .header-subtitle {
-            font-size: clamp(1rem, 2vw, 1.25rem);
-            color: #AAAAAA; margin-bottom: 30px; font-weight: 500;
-        }
-        .header-meta {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px; margin-top: 40px; padding-top: 40px;
-            border-top: 1px solid rgba(232, 67, 10, 0.1);
-        }
-        .meta-item { text-align: left; }
-        .meta-label {
-            font-size: 0.85rem; color: #E8430A; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px;
-        }
-        .meta-value { font-size: 1rem; color: #FFFFFF; }
+  --bg: #111113;
+  --bg-warm: #161618;
+  --bg-card: #1C1C1F;
+  --bg-dark: #0A0A0B;
+  --bg-dark-card: #1C1C1F;
 
-        /* ============ MAIN ============ */
-        main { max-width: 900px; margin: 0 auto; padding: 0 40px; }
-        section {
-            margin-bottom: 120px; opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-        section:nth-child(1) { animation-delay: 0.2s; }
-        section:nth-child(2) { animation-delay: 0.4s; }
-        section:nth-child(3) { animation-delay: 0.6s; }
-        section:nth-child(4) { animation-delay: 0.8s; }
-        section:nth-child(5) { animation-delay: 1s; }
-        section:nth-child(6) { animation-delay: 1.2s; }
-        section:nth-child(7) { animation-delay: 1.4s; }
-        section:nth-child(8) { animation-delay: 1.6s; }
+  --text: #E8E6E3;
+  --text-secondary: #8A8A8A;
+  --text-tertiary: #5A5A5A;
+  --text-inverse: #E8E6E3;
 
-        section h2 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 40px; position: relative; padding-bottom: 20px;
-        }
-        section h2::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 60px; height: 4px;
-            background: linear-gradient(90deg, #E8430A 0%, rgba(232, 67, 10, 0) 100%);
-        }
-        section p {
-            font-size: 1.05rem; margin-bottom: 20px;
-            line-height: 1.8; color: #CCCCCC;
-        }
-        .intro-text { font-size: 1.2rem; line-height: 1.9; margin-bottom: 30px; }
+  --border: rgba(255,255,255,0.06);
+  --border-strong: rgba(255,255,255,0.12);
 
-        /* ============ PROBLEM GRID ============ */
-        .problem-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px; margin: 50px 0;
-        }
-        .problem-card {
-            background: rgba(232, 67, 10, 0.05);
-            border: 1px solid rgba(232, 67, 10, 0.2);
-            padding: 30px; border-radius: 4px; transition: all 0.3s ease;
-        }
-        .problem-card:hover {
-            background: rgba(232, 67, 10, 0.1);
-            border-color: #E8430A; transform: translateY(-5px);
-        }
-        .problem-number {
-            font-size: 2rem; font-weight: 700;
-            color: #E8430A; margin-bottom: 15px;
-        }
-        .problem-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
-        .problem-card p { font-size: 0.95rem; color: #AAAAAA; }
+  --steel: #3A3A3E;
+  --steel-light: #4A4A4F;
 
-        /* ============ DELIVERABLES ============ */
-        .deliverables {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px; margin: 60px 0;
-        }
-        .deliverable {
-            padding: 40px; border-left: 4px solid #E8430A;
-            background: rgba(232, 67, 10, 0.03);
-        }
-        .deliverable h3 {
-            font-size: 1.4rem; margin-bottom: 25px; color: #E8430A;
-        }
-        .deliverable ul { list-style: none; padding: 0; }
-        .deliverable li {
-            padding-left: 25px; margin-bottom: 15px;
-            position: relative; font-size: 0.95rem;
-        }
-        .deliverable li::before {
-            content: '→'; position: absolute; left: 0;
-            color: #E8430A; font-weight: bold;
-        }
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 
-        /* ============ TIER BADGES ============ */
-        .tier-badge {
-            display: inline-block; padding: 4px 12px; font-size: 0.7rem;
-            font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
-            border-radius: 2px; margin-bottom: 20px;
-        }
-        .tier-base .tier-badge { background: #E8430A; color: #fff; }
-        .tier-premium .tier-badge { background: #D4A017; color: #0A0A0A; }
-        .tier-enterprise .tier-badge { background: #7B68EE; color: #fff; }
-        .tier-premium { border-left-color: #D4A017 !important; }
-        .tier-enterprise { border-left-color: #7B68EE !important; }
-        .tier-note {
-            font-size: 0.8rem; color: #888; margin-top: 20px;
-            padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.06);
-            font-style: italic;
-        }
+  --ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-fast: 150ms;
+  --t-base: 250ms;
+  --t-slow: 400ms;
 
-        /* ============ PROTOTYPE BOX ============ */
-        .prototype-box {
-            background: rgba(232, 67, 10, 0.05);
-            border: 1px solid rgba(232, 67, 10, 0.3);
-            padding: 50px; border-radius: 4px; text-align: center;
-            margin: 40px 0;
-        }
-        .prototype-box h3 { font-size: 1.3rem; margin-bottom: 15px; }
-        .prototype-box p { color: #AAAAAA; margin-bottom: 30px; }
-        .prototype-link {
-            display: inline-block; padding: 18px 40px;
-            background: #E8430A; color: #FFFFFF; font-weight: 700;
-            border-radius: 4px; font-size: 1.1rem;
-            transition: all 0.3s ease; text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .prototype-link:hover {
-            background: #FF6B00; color: #FFFFFF;
-            transform: translateY(-3px); box-shadow: 0 10px 30px rgba(232, 67, 10, 0.3);
-        }
+  --radius-sm: 2px;
+  --radius-md: 3px;
+  --radius-lg: 4px;
 
-        /* ============ BEFORE/AFTER ============ */
-        .comparison {
-            display: grid; grid-template-columns: 1fr 1fr;
-            gap: 30px; margin: 50px 0;
-        }
-        .comparison-col {
-            padding: 30px; border-radius: 4px;
-        }
-        .comparison-before {
-            background: rgba(255, 50, 50, 0.05);
-            border: 1px solid rgba(255, 50, 50, 0.2);
-        }
-        .comparison-after {
-            background: rgba(0, 200, 100, 0.05);
-            border: 1px solid rgba(0, 200, 100, 0.2);
-        }
-        .comparison-col h3 {
-            font-size: 1.1rem; margin-bottom: 20px;
-        }
-        .comparison-before h3 { color: #FF5555; }
-        .comparison-after h3 { color: #00C864; }
-        .comparison-col ul { list-style: none; padding: 0; }
-        .comparison-col li {
-            padding: 8px 0; font-size: 0.92rem;
-            color: #AAAAAA; border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .comparison-col li:last-child { border-bottom: none; }
+  --shadow-card: 0 2px 12px rgba(0,0,0,0.25);
+  --shadow-hover: 0 8px 28px rgba(0,0,0,0.3);
+  --nav-bg: rgba(17,17,19,0.92);
+}
 
-        /* ============ TIMELINE ============ */
-        .timeline { margin: 60px 0; }
-        .timeline-item {
-            display: grid; grid-template-columns: 150px 1fr;
-            gap: 40px; margin-bottom: 40px; padding-bottom: 40px;
-            border-bottom: 1px solid rgba(232, 67, 10, 0.1);
-        }
-        .timeline-item:last-child { border-bottom: none; }
-        .timeline-phase { font-weight: 600; color: #E8430A; font-size: 0.95rem; }
-        .timeline-content h3 { font-size: 1.2rem; margin-bottom: 10px; }
-        .timeline-duration { color: #888888; font-size: 0.9rem; }
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
 
-        /* ============ INVESTMENT ============ */
-        .investment-box {
-            background: rgba(232, 67, 10, 0.08);
-            border: 2px solid #E8430A; padding: 40px;
-            margin: 40px 0; text-align: center; border-radius: 4px;
-        }
-        .investment-box h3 { font-size: 1.2rem; margin-bottom: 20px; }
-        .investment-amount {
-            font-size: clamp(2rem, 3vw, 3rem); color: #E8430A;
-            font-weight: 700; margin-bottom: 10px;
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .investment-details { color: #AAAAAA; font-size: 0.95rem; }
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-        /* ============ WHY FLAREO ============ */
-        .why-flareo {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-        }
-        .why-item {
-            padding: 30px; background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(232, 67, 10, 0.1); transition: all 0.3s ease;
-        }
-        .why-item:hover {
-            background: rgba(232, 67, 10, 0.05); border-color: #E8430A;
-        }
-        .why-item h3 { font-size: 1.05rem; margin-bottom: 15px; color: #E8430A; }
-        .why-item p { font-size: 0.95rem; }
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
-        /* ============ FOOTER ============ */
-        footer {
-            padding: 60px 40px; text-align: center;
-            border-top: 1px solid rgba(232, 67, 10, 0.2);
-            margin-top: 60px;
-        }
-        .footer-logo {
-            font-size: 2rem; font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700; margin-bottom: 20px;
-        }
-        .footer-contacts {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 30px; margin-top: 30px; text-align: left;
-        }
-        .contact-label {
-            font-size: 0.8rem; color: #E8430A; font-weight: 600;
-            text-transform: uppercase; margin-bottom: 8px;
-        }
-        .contact-value { color: #CCCCCC; }
-        .footer-disclaimer {
-            margin-top: 40px; font-size: 0.85rem; color: #888888;
-        }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
 
-        /* ============ ANIMATIONS ============ */
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
 
-        /* ============ PRINT ============ */
-        @media print {
-            body { background-color: #FFFFFF; color: #000000; }
-            header, section, footer { page-break-inside: avoid; }
-            a { color: #0A0A0A; }
-            .problem-card, .deliverable, .why-item {
-                border: 1px solid #CCCCCC; background: #FAFAFA;
-            }
-            .prototype-link { border: 2px solid #0A0A0A; }
-        }
+.mono { font-family: var(--font-mono); }
 
-        /* ============ RESPONSIVE ============ */
-        @media (max-width: 768px) {
-            main { padding: 0 20px; }
-            header { padding: 40px 20px; }
-            section h2 { font-size: 2rem; }
-            .header-meta { grid-template-columns: 1fr; }
-            .deliverables { grid-template-columns: 1fr; }
-            .timeline-item { grid-template-columns: 1fr; gap: 20px; }
-            .comparison { grid-template-columns: 1fr; }
-        }
-    </style>
+/* Material icons inline */
+.icon {
+  font-family: 'Material Symbols Outlined';
+  font-size: 1em;
+  line-height: 1;
+  vertical-align: middle;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+
+/* ============================
+   NAV
+   ============================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 4vw, 48px);
+  background: var(--nav-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  display: flex; align-items: center; gap: 8px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: -0.3px;
+}
+.nav-logo .fl { color: var(--text); }
+.nav-logo .x { color: var(--red); font-family: var(--font-mono); font-weight: 500; font-size: 0.85rem; }
+.nav-logo .client { color: var(--text-secondary); font-weight: 500; }
+.nav-meta {
+  display: flex; gap: 24px;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.nav-meta li { padding: 6px 0; }
+.nav-cta {
+  padding: 10px 24px;
+  border-radius: 0;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--t-base) var(--ease);
+}
+.nav-cta:hover {
+  background: var(--red-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(196,30,42,0.35);
+}
+@media (max-width: 768px) {
+  .nav-meta { display: none; }
+}
+
+/* ============================
+   HERO
+   ============================ */
+.hero {
+  padding: clamp(120px,15vw,180px) 0 clamp(60px,8vw,100px);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 30%, rgba(196,30,42,0.06) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg) 70%, var(--bg-warm) 100%);
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 1; }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 28px;
+  padding: 6px 14px;
+  border: 1px solid var(--red-border);
+  background: var(--red-bg);
+}
+.hero-eyebrow::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--red);
+}
+.hero h1 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 5.5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  max-width: 18ch;
+}
+.hero h1 em {
+  color: var(--red);
+  font-style: normal;
+}
+.hero-desc {
+  font-size: 1.075rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 620px;
+  margin-bottom: 40px;
+}
+.hero-desc strong { color: var(--text); font-weight: 600; }
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 0;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--t-base) var(--ease);
+}
+.btn-primary:hover {
+  background: var(--red-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(196,30,42,0.35);
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 0;
+  border: 2px solid var(--border-strong);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--t-base) var(--ease);
+}
+.btn-outline:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-2px);
+}
+
+/* Hero spec table */
+.hero-specs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 64px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.hero-spec {
+  padding: 24px 20px;
+  border-right: 1px solid var(--border);
+}
+.hero-spec:last-child { border-right: none; }
+.hero-spec__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.hero-spec__value {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 768px) {
+  .hero-specs { grid-template-columns: repeat(2, 1fr); }
+  .hero-spec:nth-child(2n) { border-right: none; }
+  .hero-spec:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+}
+
+/* ============================
+   SECTIONS
+   ============================ */
+.section {
+  padding: clamp(80px, 10vw, 140px) 0;
+  position: relative;
+}
+.section--alt {
+  background: var(--bg-warm);
+}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--red);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding: 4px 0;
+}
+.section-label::before {
+  content: '[';
+  color: var(--steel-light);
+  font-weight: 400;
+}
+.section-label::after {
+  content: ']';
+  color: var(--steel-light);
+  font-weight: 400;
+}
+.section-title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 620px;
+  margin-top: 20px;
+}
+.section-header {
+  margin-bottom: 64px;
+  max-width: 860px;
+}
+
+/* ============================
+   INTRO ESSAY
+   ============================ */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+.intro-essay p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.intro-essay p strong { color: var(--text); font-weight: 600; }
+@media (max-width: 900px) {
+  .intro-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================
+   PROBLEM CARDS — spec sheet style
+   ============================ */
+.spec-table {
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.spec-row {
+  display: grid;
+  grid-template-columns: 60px 240px 1fr;
+  border-bottom: 1px solid var(--border);
+  padding: 24px clamp(20px, 3vw, 32px);
+  transition: background-color var(--t-base) var(--ease);
+  gap: 24px;
+  align-items: start;
+}
+.spec-row:last-child { border-bottom: none; }
+.spec-row:hover { background: rgba(196,30,42,0.03); }
+.spec-row__id {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.08em;
+}
+.spec-row__label {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+.spec-row__tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid var(--border-strong);
+  margin-top: 8px;
+}
+.spec-row__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+@media (max-width: 900px) {
+  .spec-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 20px;
+  }
+}
+
+.callout {
+  margin-top: 48px;
+  padding: 24px 32px;
+  background: var(--red-bg);
+  border-left: 3px solid var(--red);
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+.callout strong { color: var(--red); }
+
+/* ============================
+   COMPARISON
+   ============================ */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  margin-top: 40px;
+}
+.comparison-col {
+  padding: 40px clamp(24px, 3vw, 40px);
+}
+.comparison-col--before {
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+}
+.comparison-col--after {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(196,30,42,0.04) 100%);
+}
+.comparison-col h3 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comparison-col--before h3 { color: var(--text-tertiary); }
+.comparison-col--before h3::before {
+  content: '✗';
+  color: var(--text-tertiary);
+  font-size: 1rem;
+}
+.comparison-col--after h3 { color: var(--red); }
+.comparison-col--after h3::before {
+  content: '✓';
+  color: var(--red);
+  font-size: 1rem;
+}
+.comparison ul {
+  list-style: none;
+  padding: 0;
+}
+.comparison li {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.comparison-col--after li { color: var(--text); }
+.comparison li:last-child { border-bottom: none; }
+@media (max-width: 900px) {
+  .comparison { grid-template-columns: 1fr; }
+  .comparison-col--before { border-right: none; border-bottom: 1px solid var(--border); }
+}
+
+/* ============================
+   PROTOTYPE BLOCK
+   ============================ */
+.prototype-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  padding: clamp(40px, 6vw, 80px) clamp(32px, 4vw, 56px);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.prototype-block::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(196,30,42,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.prototype-block > * { position: relative; z-index: 1; }
+.prototype-block__title {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.05;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.prototype-block__desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+  max-width: 52ch;
+}
+.prototype-block__cta { text-align: right; }
+.prototype-block__meta {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-top: 16px;
+}
+@media (max-width: 900px) {
+  .prototype-block {
+    grid-template-columns: 1fr;
+    padding: 40px 24px;
+  }
+  .prototype-block__cta { text-align: left; }
+}
+
+/* ============================
+   TIERS
+   ============================ */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.tier {
+  background: var(--bg-card);
+  padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 36px);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: background-color var(--t-base) var(--ease);
+  position: relative;
+}
+.tier:last-child { border-right: none; }
+.tier:hover { background: var(--bg-warm); }
+.tier--featured {
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(196,30,42,0.05) 100%);
+}
+.tier--featured::before {
+  content: '// RECOMMENDED';
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.1em;
+}
+.tier__badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border: 1px solid var(--red-border);
+  background: var(--red-bg);
+  width: fit-content;
+}
+.tier__name {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--text);
+}
+.tier__price {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.tier__price-note {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 8px;
+}
+.tier__features {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 24px;
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  flex: 1;
+}
+.tier__features li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  padding-left: 24px;
+  position: relative;
+}
+.tier__features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.tier__note {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 900px) {
+  .tiers { grid-template-columns: 1fr; }
+  .tier { border-right: none; border-bottom: 1px solid var(--border); }
+  .tier:last-child { border-bottom: none; }
+}
+
+/* ============================
+   TIMELINE
+   ============================ */
+.timeline {
+  margin-top: 48px;
+  border: 1px solid var(--border);
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 120px 1fr 140px;
+  gap: clamp(24px, 3vw, 48px);
+  padding: clamp(28px, 3.5vw, 40px) clamp(24px, 3vw, 40px);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+  align-items: start;
+  transition: background-color var(--t-base) var(--ease);
+}
+.timeline-item:last-child { border-bottom: none; }
+.timeline-item:hover { background: var(--bg-warm); }
+.timeline-item__phase {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.timeline-item__num {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  margin-top: 6px;
+  letter-spacing: -0.02em;
+}
+.timeline-item__title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.timeline-item__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 60ch;
+}
+.timeline-item__duration {
+  text-align: right;
+}
+.timeline-item__duration-label {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.timeline-item__duration-value {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-top: 4px;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 900px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .timeline-item__duration { text-align: left; }
+}
+
+.timeline-footer {
+  margin-top: 32px;
+  padding: 20px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--red);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+.timeline-footer strong { color: var(--red); }
+
+/* ============================
+   WHY FLAREO
+   ============================ */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+}
+.why-item {
+  padding: clamp(32px, 4vw, 48px);
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background-color var(--t-base) var(--ease);
+}
+.why-item:hover { background: var(--bg-warm); }
+.why-item:nth-child(2n) { border-right: none; }
+.why-item:nth-last-child(-n+2) { border-bottom: none; }
+.why-item__num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--red);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 20px;
+}
+.why-item__title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.why-item__desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 52ch;
+}
+@media (max-width: 900px) {
+  .why-grid { grid-template-columns: 1fr; }
+  .why-item { border-right: none; }
+  .why-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .why-item:last-child { border-bottom: none; }
+}
+
+/* ============================
+   CTA FINAL
+   ============================ */
+.cta-final {
+  background: var(--bg-card);
+  border: 1px solid var(--red);
+  padding: clamp(60px, 8vw, 100px) clamp(32px, 4vw, 64px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-top: 48px;
+}
+.cta-final::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(196,30,42,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-final > * { position: relative; z-index: 1; }
+.cta-final h3 {
+  font-family: var(--font-sans);
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.cta-final p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+.footer {
+  border-top: 1px solid var(--border);
+  padding: clamp(60px, 8vw, 100px) 0 32px;
+  background: var(--bg-warm);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+.footer-brand {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.footer-brand .accent { color: var(--red); }
+.footer-tagline {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  max-width: 36ch;
+  line-height: 1.6;
+}
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 16px;
+}
+.footer-col ul { list-style: none; }
+.footer-col li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 5px 0;
+}
+.footer-col a:hover { color: var(--red); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+}
+
+/* Print */
+@media print {
+  body { background: #fff; color: #000; }
+  .nav { display: none; }
+  .reveal { opacity: 1; transform: none; }
+  .section { padding: 40px 0; break-inside: avoid; }
+  .spec-row, .tier, .timeline-item, .why-item { break-inside: avoid; }
+}
+@page { margin: 20mm; }
+</style>
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="logo-text">FLAREO<span class="logo-accent">®</span></div>
-        <div class="header-subtitle">Proposta Commerciale</div>
-        <div class="header-meta">
-            <div class="meta-item">
-                <div class="meta-label">Data</div>
-                <div class="meta-value">Aprile 2026</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Cliente</div>
-                <div class="meta-value">Effegomma S.r.l.</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Sede</div>
-                <div class="meta-value">Fermignano (PU)</div>
-            </div>
-            <div class="meta-item">
-                <div class="meta-label">Progetto</div>
-                <div class="meta-value">Redesign Sito Web</div>
-            </div>
+<!-- ============================
+     NAV
+     ============================ -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <span class="fl">FLAREO</span>
+    <span class="x">×</span>
+    <span class="client">Effegomma</span>
+  </div>
+  <ul class="nav-meta">
+    <li>// PROPOSAL</li>
+    <li>// APR.2026</li>
+    <li>// v1.0</li>
+  </ul>
+  <a href="mailto:flareo.agency@gmail.com?subject=Effegomma · Rispondo alla proposta" class="nav-cta">rispondi</a>
+</nav>
+
+<!-- ============================
+     HERO
+     ============================ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">
+      PROPOSAL · CONFIDENTIAL · APR.2026
+    </div>
+    <h1>
+      25 anni di<br>
+      vulcanizzazione<br>
+      meritano un sito<br>
+      <em>all'altezza.</em>
+    </h1>
+    <p class="hero-desc">
+      Proposta Flareo Studio per il redesign del sito web di <strong>Effegomma S.r.l.</strong> Un progetto tecnico che trasforma 25+ anni di eccellenza nella gomma in una presenza digitale industriale, performante e conversion-focused.
+    </p>
+    <div class="hero-actions">
+      <a href="#proposta" class="btn-primary">
+        leggi la proposta <span class="mono">→</span>
+      </a>
+      <a href="index.html" target="_blank" class="btn-outline">
+        apri il prototipo <span class="mono">↗</span>
+      </a>
+    </div>
+
+    <div class="hero-specs">
+      <div class="hero-spec">
+        <div class="hero-spec__label">// CLIENT</div>
+        <div class="hero-spec__value">Effegomma S.r.l.</div>
+      </div>
+      <div class="hero-spec">
+        <div class="hero-spec__label">// SEDE</div>
+        <div class="hero-spec__value">Fermignano · PU</div>
+      </div>
+      <div class="hero-spec">
+        <div class="hero-spec__label">// DATE</div>
+        <div class="hero-spec__value">Aprile 2026</div>
+      </div>
+      <div class="hero-spec">
+        <div class="hero-spec__label">// VALIDITY</div>
+        <div class="hero-spec__value">30 giorni</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     INTRO
+     ============================ -->
+<section class="section" id="proposta">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="reveal">
+        <div class="section-label">01 / Introduzione</div>
+        <h2 class="section-title">Gentile Direzione,<br>ecco cosa abbiamo visto.</h2>
+      </div>
+      <div class="intro-essay reveal">
+        <p>Abbiamo analizzato in dettaglio la vostra attuale presenza digitale su <strong>effegomma.it</strong>. Effegomma vanta oltre <strong>25 anni di eccellenza</strong> nella vulcanizzazione della gomma, la certificazione <strong>ISO 9001 dal 1999</strong>, oltre <strong>1 milione di articoli prodotti all'anno</strong>, e un'innovazione unica come <strong>Vulcovir</strong> — la gomma antibatterica e antivirale.</p>
+        <p>Siete un'azienda all'avanguardia con competenze tecniche di altissimo livello. Tuttavia, il sito web attuale non riflette pienamente questa eccellenza. La vostra comunicazione digitale merita un aggiornamento significativo per posizionarvi come il partner industriale premium che siete.</p>
+        <p>In questa proposta presentiamo un <strong>redesign completo del sito web</strong>, con un prototipo già funzionante come dimostrazione della nostra visione. Non promesse: pagine reali che potete navigare, criticare, approvare.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     ANALISI
+     ============================ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">02 / Analisi del sito attuale</div>
+      <h2 class="section-title">10 criticità<br>identificate.</h2>
+      <p class="section-subtitle">Durante la valutazione approfondita di effegomma.it abbiamo identificato i punti critici che limitano l'efficacia della comunicazione digitale.</p>
+    </div>
+
+    <div class="spec-table reveal">
+      <div class="spec-row">
+        <div class="spec-row__id">E01</div>
+        <div>
+          <div class="spec-row__label">Design datato</div>
+          <div class="spec-row__tag">// Visual</div>
         </div>
-    </header>
-
-    <!-- MAIN CONTENT -->
-    <main>
-
-        <!-- INTRODUZIONE -->
-        <section>
-            <h2>Introduzione</h2>
-            <p class="intro-text">Gentile Direzione Effegomma,</p>
-            <p>
-                Abbiamo analizzato in dettaglio la vostra attuale presenza digitale su <strong>effegomma.it</strong>. Effegomma vanta oltre 25 anni di eccellenza nella vulcanizzazione della gomma, la certificazione ISO 9001 dal 1999, oltre 1 milione di articoli prodotti all'anno, e un'innovazione unica come Vulcovir — la gomma antibatterica e antivirale. Siete un'azienda all'avanguardia con competenze tecniche di altissimo livello.
-            </p>
-            <p>
-                Tuttavia, il vostro sito web attuale non riflette pienamente questa eccellenza. La vostra comunicazione digitale merita un aggiornamento significativo per posizionarvi come il partner industriale premium che siete. In questa proposta presentiamo un redesign completo del sito web, con un prototipo già funzionante come dimostrazione della nostra visione.
-            </p>
-        </section>
-
-        <!-- ANALISI SITO ATTUALE -->
-        <section>
-            <h2>Analisi del Sito Attuale</h2>
-            <p>
-                Durante la nostra valutazione approfondita di effegomma.it, abbiamo identificato i seguenti punti critici che limitano l'efficacia della vostra comunicazione digitale:
-            </p>
-
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <div class="problem-number">1</div>
-                    <h3>Design Datato</h3>
-                    <p>L'interfaccia presenta un layout tipico dei CMS di 10+ anni fa. Lo stile visivo non comunica la modernità e l'innovazione tecnologica della vostra azienda.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">2</div>
-                    <h3>CSS Corrotto & Spazi Vuoti</h3>
-                    <p>Codice CSS che appare nel testo visibile della pagina (slider n2-ss). Grandi aree vuote sotto il fold della homepage indicano problemi di rendering.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">3</div>
-                    <h3>Navigazione Ridondante</h3>
-                    <p>Barra di navigazione sticky che appare due volte sulla pagina, creando confusione visiva e sprecando spazio prezioso above-the-fold.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">4</div>
-                    <h3>Statistica Controproducente</h3>
-                    <p>"15% articoli non conformi" mostrato in home — una metrica negativa presentata come punto di forza, che danneggia la percezione di qualità.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">5</div>
-                    <h3>Multilingua Ingombrante</h3>
-                    <p>6 bandiere nel header (IT, RU, DE, FR, ES, EN) — approccio visivamente datato che appesantisce la navigazione senza una vera localizzazione SEO.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">6</div>
-                    <h3>Footer Obsoleto</h3>
-                    <p>Copyright fermo al 2021, menzione di Skype come canale di contatto, nessun link social. Il footer è il biglietto da visita digitale finale — il vostro non lo fa.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">7</div>
-                    <h3>Nessuna Strategia CTA</h3>
-                    <p>Mancano call-to-action strutturate. "Chiedi informazioni" ripetuto senza gerarchia, nessun percorso utente definito verso la conversione.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">8</div>
-                    <h3>Mobile Non Ottimizzato</h3>
-                    <p>Il sito non è progettato mobile-first. Con oltre il 60% del traffico B2B proveniente da mobile, perdete potenziali clienti ogni giorno.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">9</div>
-                    <h3>Vulcovir Sottovalutato</h3>
-                    <p>Il vostro prodotto più innovativo (gomma antibatterica certificata ISO) è nascosto in una sotto-pagina separata invece di essere un punto di forza visibile.</p>
-                </div>
-                <div class="problem-card">
-                    <div class="problem-number">10</div>
-                    <h3>UX & Performance Carenti</h3>
-                    <p>Cookie banner datato, assenza di micro-interazioni, tempi di caricamento elevati per un CMS pesante, nessuna animazione che guidi l'utente.</p>
-                </div>
-            </div>
-
-            <p style="margin-top: 40px; color: #E8430A; font-weight: 600;">
-                Conclusione: il vostro sito non comunica il valore reale di Effegomma. Servite 20+ paesi con tecnologia d'avanguardia, ma il vostro biglietto da visita digitale racconta un'altra storia.
-            </p>
-        </section>
-
-        <!-- BEFORE / AFTER -->
-        <section>
-            <h2>Prima vs Dopo</h2>
-            <p>
-                Ecco una sintesi visiva di cosa cambierebbe con il redesign:
-            </p>
-            <div class="comparison">
-                <div class="comparison-col comparison-before">
-                    <h3>✗ Sito Attuale</h3>
-                    <ul>
-                        <li>Design generico CMS/Joomla</li>
-                        <li>CSS corrotto visibile agli utenti</li>
-                        <li>Nessuna gerarchia visiva</li>
-                        <li>Navigazione duplicata</li>
-                        <li>Statistiche negative in evidenza</li>
-                        <li>6 bandiere disordinate nel header</li>
-                        <li>Vulcovir nascosto in sotto-pagina</li>
-                        <li>Nessuna animazione o interattività</li>
-                        <li>Footer copyright 2021</li>
-                        <li>Non mobile-responsive</li>
-                    </ul>
-                </div>
-                <div class="comparison-col comparison-after">
-                    <h3>✓ Nuovo Sito Flareo</h3>
-                    <ul>
-                        <li>Design light industrial editoriale</li>
-                        <li>Codice pulito e performante</li>
-                        <li>Gerarchia chiara e CTA strategiche</li>
-                        <li>Nav singola con scroll intelligente</li>
-                        <li>Solo statistiche positive e impattanti</li>
-                        <li>Selector lingua pulito e moderno</li>
-                        <li>Vulcovir in sezione hero dedicata</li>
-                        <li>Bento grid + scroll gallery interattive</li>
-                        <li>Footer completo e aggiornato</li>
-                        <li>Mobile-first, responsive al 100%</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- IL PROTOTIPO -->
-        <section>
-            <h2>Il Prototipo</h2>
-            <p>
-                Per dimostrarvi la concretezza della nostra visione, abbiamo già realizzato un <strong>prototipo funzionante</strong> del vostro nuovo sito web. Potrete esplorare l'interfaccia, le animazioni 3D dei vostri prodotti, la sezione Vulcovir dedicata e il layout responsive.
-            </p>
-            <div class="prototype-box">
-                <h3>Visualizza il Prototipo Interattivo</h3>
-                <p>
-                    Scoprite come Effegomma può presentarsi al mondo con una comunicazione digitale premium — all'altezza della vostra eccellenza produttiva.
-                </p>
-                <a href="index.html" class="prototype-link">Accedi al Prototipo →</a>
-            </div>
-            <p style="margin-top: 40px;">
-                Il prototipo include 17+ pagine navigabili: Home con hero 3D e bento grid, Azienda, 10 pagine prodotto dedicate (Ruote, Ventose, Guarnizioni, Rulli, Piastre, Paracolpi, Calcioli, Speciali, PU Mill, Polverini) con navigazione completa tra categorie, Processi produttivi, Vulcovir, e Contatti. Menu dropdown prodotti, sub-navigazione tra categorie, lightbox immagini, dark/light mode, e layout responsive al 100%.
-            </p>
-        </section>
-
-        <!-- LA NOSTRA PROPOSTA -->
-        <section>
-            <h2>La Nostra Proposta</h2>
-            <p>
-                Proponiamo un redesign completo del sito web di Effegomma, focalizzato sulla comunicazione efficace dei vostri punti di forza e sulla conversione di visitatori in richieste di preventivo.
-            </p>
-
-            <div class="deliverables">
-                <div class="deliverable tier-base">
-                    <div class="tier-badge">Base</div>
-                    <h3>Pacchetto Base</h3>
-                    <ul>
-                        <li>Design premium dark industrial su misura</li>
-                        <li>17+ pagine con navigazione SPA completa</li>
-                        <li>Catalogo prodotti con 10 categorie</li>
-                        <li>Sezione Vulcovir dedicata</li>
-                        <li>Dark/light mode toggle</li>
-                        <li>Mobile-first responsive al 100%</li>
-                        <li>Animazioni 3D (Three.js hero)</li>
-                        <li>Form preventivi</li>
-                        <li>SEO on-page base (Meta tags, Sitemap)</li>
-                        <li>Supporto post-lancio (30 giorni)</li>
-                    </ul>
-                </div>
-                <div class="deliverable tier-premium">
-                    <div class="tier-badge">Premium</div>
-                    <h3>Servizi Premium</h3>
-                    <ul>
-                        <li>Integrazione CMS (WordPress/Headless)</li>
-                        <li>Copywriting professionale multilingua</li>
-                        <li>Google Analytics 4 + Conversion Tracking</li>
-                        <li>Accessibilità WCAG AA completa</li>
-                        <li>Performance optimization (PageSpeed 90+)</li>
-                        <li>Hosting gestito (annuale)</li>
-                    </ul>
-                    <div class="tier-note">Add-on, quotato separatamente</div>
-                </div>
-                <div class="deliverable tier-enterprise">
-                    <div class="tier-badge">Enterprise</div>
-                    <h3>Servizi Enterprise</h3>
-                    <ul>
-                        <li>Multilingua completo (6 lingue, SEO localizzato)</li>
-                        <li>E-commerce / catalogo con filtri avanzati</li>
-                        <li>Area riservata clienti</li>
-                        <li>Integrazione ERP/gestionale</li>
-                        <li>Manutenzione continuativa (SLA)</li>
-                        <li>Strategia SEO/SEM avanzata</li>
-                    </ul>
-                    <div class="tier-note">Quotato separatamente</div>
-                </div>
-            </div>
-
-            <p style="margin-top: 40px; font-size: 0.95rem; color: #AAAAAA;">
-                <strong style="color: #E8430A;">Nota:</strong> Il pacchetto base include tutto il necessario per un sito web professionale e performante. I servizi Premium e Enterprise sono disponibili come add-on e vengono quotati separatamente in base alle vostre esigenze specifiche.
-            </p>
-        </section>
-
-        <!-- TIMELINE -->
-        <section>
-            <h2>Timeline di Progetto</h2>
-            <p>
-                Il progetto sarà articolato in 4 fasi principali, per un totale di 6-10 settimane (tempi variabili in base ai servizi premium selezionati):
-            </p>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-phase">FASE 1</div>
-                    <div class="timeline-content">
-                        <h3>Analisi & Strategia</h3>
-                        <p>Analisi approfondita del vostro mercato, competitor e audience target. Definizione dell'architettura informativa e della strategia di conversione.</p>
-                        <div class="timeline-duration">⏱ 1 settimana</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase">FASE 2</div>
-                    <div class="timeline-content">
-                        <h3>Design & Prototipazione</h3>
-                        <p>Design delle pagine principali, prototipo interattivo, modelli 3D dei prodotti, sistema tipografico e palette colori definitiva.</p>
-                        <div class="timeline-duration">⏱ 2 settimane</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase">FASE 3</div>
-                    <div class="timeline-content">
-                        <h3>Sviluppo & Integrazione</h3>
-                        <p>Sviluppo frontend completo, ottimizzazione performance, SEO on-page, test cross-browser e cross-device.</p>
-                        <div class="timeline-duration">⏱ 4 settimane</div>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-phase">FASE 4</div>
-                    <div class="timeline-content">
-                        <h3>Lancio & Ottimizzazione</h3>
-                        <p>Migrazione dominio, lancio in produzione, configurazione analytics, formazione e supporto post-lancio.</p>
-                        <div class="timeline-duration">⏱ 1 settimana</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- PERCHÉ FLAREO -->
-        <section>
-            <h2>Perché Flareo</h2>
-            <div class="why-flareo">
-                <div class="why-item">
-                    <h3>Specializzati in B2B Industriale</h3>
-                    <p>Non siamo una web agency generica. Lavoriamo con aziende manifatturiere italiane e sappiamo come comunicare prodotti tecnici con impatto visivo premium.</p>
-                </div>
-                <div class="why-item">
-                    <h3>Prototipi Prima, Parole Poi</h3>
-                    <p>Vi abbiamo già mostrato cosa possiamo fare — non solo promesse, ma un prototipo funzionante del vostro nuovo sito. Questo è il nostro modo di lavorare.</p>
-                </div>
-                <div class="why-item">
-                    <h3>Tecnologia Moderna</h3>
-                    <p>Three.js, GSAP, performance-first. Niente template WordPress pesanti — codice su misura per velocità e impatto visivo.</p>
-                </div>
-                <div class="why-item">
-                    <h3>ROI Misurabile</h3>
-                    <p>Ogni elemento del sito è progettato per convertire visitatori in richieste di preventivo. Design bello e funzionale — non solo estetica.</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-logo">FLAREO<span class="logo-accent">®</span></div>
-        <p style="color: #888; margin-bottom: 30px;">Design che converte®</p>
-
-        <div class="footer-contacts">
-            <div>
-                <div class="contact-label">Email</div>
-                <div class="contact-value">flareo.agency@gmail.com</div>
-            </div>
-            <div>
-                <div class="contact-label">Web</div>
-                <div class="contact-value"><a href="https://flareo-agency.github.io/flareo-site/">flareo.studio</a></div>
-            </div>
-            <div>
-                <div class="contact-label">Referente</div>
-                <div class="contact-value">Aldo — CEO & Creative Director</div>
-            </div>
+        <div class="spec-row__desc">L'interfaccia presenta un layout tipico dei CMS di 10+ anni fa. Lo stile visivo non comunica la modernità e l'innovazione tecnologica della vostra azienda.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E02</div>
+        <div>
+          <div class="spec-row__label">CSS corrotto & spazi vuoti</div>
+          <div class="spec-row__tag">// Tech</div>
         </div>
-
-        <div class="footer-disclaimer">
-            Questo documento è strettamente confidenziale e destinato esclusivamente ad Effegomma S.r.l.
-            © 2026 Flareo. Tutti i diritti riservati.
+        <div class="spec-row__desc">Codice CSS che appare nel testo visibile della pagina (slider n2-ss). Grandi aree vuote sotto il fold della homepage indicano problemi di rendering.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E03</div>
+        <div>
+          <div class="spec-row__label">Navigazione ridondante</div>
+          <div class="spec-row__tag">// UX</div>
         </div>
-    </footer>
+        <div class="spec-row__desc">Barra di navigazione sticky che appare due volte sulla pagina, creando confusione visiva e sprecando spazio prezioso above-the-fold.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E04</div>
+        <div>
+          <div class="spec-row__label">Statistica controproducente</div>
+          <div class="spec-row__tag">// Copy</div>
+        </div>
+        <div class="spec-row__desc">"15% articoli non conformi" mostrato in home — una metrica negativa presentata come punto di forza, che danneggia la percezione di qualità.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E05</div>
+        <div>
+          <div class="spec-row__label">Multilingua ingombrante</div>
+          <div class="spec-row__tag">// i18n</div>
+        </div>
+        <div class="spec-row__desc">6 bandiere nel header (IT, RU, DE, FR, ES, EN) — approccio visivamente datato che appesantisce la navigazione senza una vera localizzazione SEO.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E06</div>
+        <div>
+          <div class="spec-row__label">Footer obsoleto</div>
+          <div class="spec-row__tag">// Content</div>
+        </div>
+        <div class="spec-row__desc">Copyright fermo al 2021, menzione di Skype come canale di contatto, nessun link social. Il footer è il biglietto da visita digitale finale — il vostro non lo fa.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E07</div>
+        <div>
+          <div class="spec-row__label">Nessuna strategia CTA</div>
+          <div class="spec-row__tag">// Conversion</div>
+        </div>
+        <div class="spec-row__desc">Mancano call-to-action strutturate. "Chiedi informazioni" ripetuto senza gerarchia, nessun percorso utente definito verso la conversione.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E08</div>
+        <div>
+          <div class="spec-row__label">Mobile non ottimizzato</div>
+          <div class="spec-row__tag">// Responsive</div>
+        </div>
+        <div class="spec-row__desc">Il sito non è progettato mobile-first. Con oltre il 60% del traffico B2B proveniente da mobile, perdete potenziali clienti ogni giorno.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E09</div>
+        <div>
+          <div class="spec-row__label">Vulcovir sottovalutato</div>
+          <div class="spec-row__tag">// Brand</div>
+        </div>
+        <div class="spec-row__desc">Il vostro prodotto più innovativo (gomma antibatterica certificata ISO) è nascosto in una sotto-pagina separata invece di essere un punto di forza visibile.</div>
+      </div>
+      <div class="spec-row">
+        <div class="spec-row__id">E10</div>
+        <div>
+          <div class="spec-row__label">UX & performance carenti</div>
+          <div class="spec-row__tag">// Perf</div>
+        </div>
+        <div class="spec-row__desc">Cookie banner datato, assenza di micro-interazioni, tempi di caricamento elevati per un CMS pesante, nessuna animazione che guidi l'utente.</div>
+      </div>
+    </div>
+
+    <div class="callout reveal">
+      <strong>Conclusione:</strong> il sito non comunica il valore reale di Effegomma. Servite 20+ paesi con tecnologia d'avanguardia, ma il vostro biglietto da visita digitale racconta un'altra storia.
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     BEFORE / AFTER
+     ============================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">03 / Prima vs dopo</div>
+      <h2 class="section-title">Cosa cambia<br>concretamente.</h2>
+      <p class="section-subtitle">Una sintesi operativa di cosa sostituiremo, punto per punto.</p>
+    </div>
+
+    <div class="comparison reveal">
+      <div class="comparison-col comparison-col--before">
+        <h3>Sito attuale</h3>
+        <ul>
+          <li>Design generico CMS / Joomla</li>
+          <li>CSS corrotto visibile agli utenti</li>
+          <li>Nessuna gerarchia visiva</li>
+          <li>Navigazione duplicata</li>
+          <li>Statistiche negative in evidenza</li>
+          <li>6 bandiere disordinate nel header</li>
+          <li>Vulcovir nascosto in sotto-pagina</li>
+          <li>Nessuna animazione o interattività</li>
+          <li>Footer copyright 2021</li>
+          <li>Non mobile-responsive</li>
+        </ul>
+      </div>
+      <div class="comparison-col comparison-col--after">
+        <h3>Nuovo sito Flareo</h3>
+        <ul>
+          <li>Design dark industrial editoriale</li>
+          <li>Codice pulito e performante</li>
+          <li>Gerarchia chiara e CTA strategiche</li>
+          <li>Nav singola con scroll intelligente</li>
+          <li>Solo statistiche positive e impattanti</li>
+          <li>Selector lingua pulito e moderno</li>
+          <li>Vulcovir in sezione hero dedicata</li>
+          <li>Bento grid + scroll gallery interattive</li>
+          <li>Footer completo e aggiornato</li>
+          <li>Mobile-first, responsive al 100%</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     PROTOTIPO
+     ============================ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="prototype-block reveal">
+      <div>
+        <div class="section-label">04 / Prototipo</div>
+        <h3 class="prototype-block__title">Navigatelo<br>prima di firmare.</h3>
+        <p class="prototype-block__desc">Per dimostrarvi la concretezza della nostra visione abbiamo già realizzato un prototipo funzionante: 17+ pagine navigabili, hero 3D, bento grid, 10 pagine prodotto dedicate (Ruote, Ventose, Guarnizioni, Rulli, Piastre, Paracolpi, Calcioli, Speciali, PU Mill, Polverini), Vulcovir, lightbox, dark/light mode, responsive al 100%.</p>
+      </div>
+      <div class="prototype-block__cta">
+        <a href="index.html" target="_blank" class="btn-primary">
+          apri il prototipo <span class="mono">↗</span>
+        </a>
+        <div class="prototype-block__meta">// 17+ pages · 3D · dark/light</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     LA PROPOSTA / TIERS
+     ============================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">05 / La proposta</div>
+      <h2 class="section-title">Tre pacchetti,<br>un sito tecnico.</h2>
+      <p class="section-subtitle">Proponiamo un redesign completo focalizzato sulla comunicazione dei vostri punti di forza e sulla conversione di visitatori in richieste di preventivo. Il <strong style="color:var(--text);">Base</strong> è sufficiente per lanciare. <strong style="color:var(--text);">Premium</strong> ed <strong style="color:var(--text);">Enterprise</strong> sono add-on quotati separatamente.</p>
+    </div>
+
+    <div class="tiers reveal">
+
+      <div class="tier">
+        <span class="tier__badge">// 01 · BASE</span>
+        <div class="tier__name">Sito tecnico<br>premium</div>
+        <div>
+          <div class="tier__price">€5–7k</div>
+          <div class="tier__price-note">Una tantum · prezzo fisso</div>
+        </div>
+        <ul class="tier__features">
+          <li>Design premium dark industrial su misura</li>
+          <li>17+ pagine con navigazione SPA</li>
+          <li>Catalogo prodotti con 10 categorie</li>
+          <li>Sezione Vulcovir dedicata</li>
+          <li>Dark / light mode toggle</li>
+          <li>Mobile-first, responsive al 100%</li>
+          <li>Animazioni 3D (Three.js hero)</li>
+          <li>Form richiesta preventivi</li>
+          <li>SEO on-page (meta tags, sitemap)</li>
+          <li>Supporto post-lancio 30 giorni</li>
+        </ul>
+      </div>
+
+      <div class="tier tier--featured">
+        <span class="tier__badge">// 02 · PREMIUM</span>
+        <div class="tier__name">CMS + perf<br>+ analytics</div>
+        <div>
+          <div class="tier__price">Add-on</div>
+          <div class="tier__price-note">Quotato separatamente</div>
+        </div>
+        <ul class="tier__features">
+          <li>Integrazione CMS (WordPress / Headless)</li>
+          <li>Copywriting professionale multilingua</li>
+          <li>Google Analytics 4 + conversion tracking</li>
+          <li>Accessibilità WCAG AA completa</li>
+          <li>Performance optimization (PageSpeed 90+)</li>
+          <li>Hosting gestito annuale</li>
+          <li>3 mesi di supporto esteso</li>
+        </ul>
+        <div class="tier__note">// Add-on — quotato separatamente</div>
+      </div>
+
+      <div class="tier">
+        <span class="tier__badge">// 03 · ENTERPRISE</span>
+        <div class="tier__name">Piattaforma<br>completa</div>
+        <div>
+          <div class="tier__price">Su misura</div>
+          <div class="tier__price-note">Preventivo dedicato</div>
+        </div>
+        <ul class="tier__features">
+          <li>Multilingua completo (6 lingue, SEO localizzato)</li>
+          <li>E-commerce / catalogo con filtri avanzati</li>
+          <li>Area riservata clienti</li>
+          <li>Integrazione ERP / gestionale</li>
+          <li>Manutenzione continuativa (SLA)</li>
+          <li>Strategia SEO / SEM avanzata</li>
+          <li>Partnership a lungo termine</li>
+        </ul>
+        <div class="tier__note">// Su specifiche — quotato separatamente</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     TIMELINE
+     ============================ -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">06 / Timeline</div>
+      <h2 class="section-title">Dalla firma al lancio:<br>4 fasi, 6–10 settimane.</h2>
+      <p class="section-subtitle">Il progetto è articolato in 4 fasi principali. Tempi variabili in base ai servizi premium selezionati.</p>
+    </div>
+
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div>
+          <div class="timeline-item__phase">// PHASE 01</div>
+          <div class="timeline-item__num">01</div>
+        </div>
+        <div>
+          <div class="timeline-item__title">Analisi & strategia</div>
+          <div class="timeline-item__desc">Analisi approfondita del vostro mercato, competitor e audience target. Definizione dell'architettura informativa e della strategia di conversione.</div>
+        </div>
+        <div class="timeline-item__duration">
+          <div class="timeline-item__duration-label">// DURATA</div>
+          <div class="timeline-item__duration-value">1 sett.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="timeline-item__phase">// PHASE 02</div>
+          <div class="timeline-item__num">02</div>
+        </div>
+        <div>
+          <div class="timeline-item__title">Design & prototipazione</div>
+          <div class="timeline-item__desc">Design delle pagine principali, prototipo interattivo, modelli 3D dei prodotti, sistema tipografico e palette colori definitiva.</div>
+        </div>
+        <div class="timeline-item__duration">
+          <div class="timeline-item__duration-label">// DURATA</div>
+          <div class="timeline-item__duration-value">2 sett.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="timeline-item__phase">// PHASE 03</div>
+          <div class="timeline-item__num">03</div>
+        </div>
+        <div>
+          <div class="timeline-item__title">Sviluppo & integrazione</div>
+          <div class="timeline-item__desc">Sviluppo frontend completo, ottimizzazione performance, SEO on-page, test cross-browser e cross-device.</div>
+        </div>
+        <div class="timeline-item__duration">
+          <div class="timeline-item__duration-label">// DURATA</div>
+          <div class="timeline-item__duration-value">4 sett.</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div>
+          <div class="timeline-item__phase">// PHASE 04</div>
+          <div class="timeline-item__num">04</div>
+        </div>
+        <div>
+          <div class="timeline-item__title">Lancio & ottimizzazione</div>
+          <div class="timeline-item__desc">Migrazione dominio, lancio in produzione, configurazione analytics, formazione e supporto post-lancio.</div>
+        </div>
+        <div class="timeline-item__duration">
+          <div class="timeline-item__duration-label">// DURATA</div>
+          <div class="timeline-item__duration-value">1 sett.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-footer reveal">
+      <strong>TOTALE:</strong> 6–10 settimane · kickoff <strong>Maggio 2026</strong> · lancio stimato <strong>Luglio 2026</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     WHY FLAREO
+     ============================ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">07 / Perché Flareo</div>
+      <h2 class="section-title">Quattro ragioni<br>concrete.</h2>
+    </div>
+
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <span class="why-item__num">// 01</span>
+        <div class="why-item__title">Specializzati in<br>B2B industriale</div>
+        <div class="why-item__desc">Non siamo una web agency generica. Lavoriamo con aziende manifatturiere italiane e sappiamo come comunicare prodotti tecnici con impatto visivo premium.</div>
+      </div>
+      <div class="why-item">
+        <span class="why-item__num">// 02</span>
+        <div class="why-item__title">Prototipi prima,<br>parole poi</div>
+        <div class="why-item__desc">Vi abbiamo già mostrato cosa possiamo fare — non solo promesse, ma un prototipo funzionante del vostro nuovo sito. Questo è il nostro modo di lavorare.</div>
+      </div>
+      <div class="why-item">
+        <span class="why-item__num">// 03</span>
+        <div class="why-item__title">Tecnologia<br>moderna</div>
+        <div class="why-item__desc">Three.js, GSAP, performance-first. Niente template WordPress pesanti — codice su misura per velocità e impatto visivo. Core Web Vitals in verde.</div>
+      </div>
+      <div class="why-item">
+        <span class="why-item__num">// 04</span>
+        <div class="why-item__title">ROI<br>misurabile</div>
+        <div class="why-item__desc">Ogni elemento del sito è progettato per convertire visitatori in richieste di preventivo. Design bello e funzionale — non solo estetica.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     CTA FINAL
+     ============================ -->
+<section class="section">
+  <div class="container">
+    <div class="cta-final reveal">
+      <div class="section-label" style="margin-bottom:16px;">// NEXT</div>
+      <h3>Parliamone.</h3>
+      <p>Una proposta non chiude un progetto. Una conversazione sì. Rimaniamo a disposizione per discussioni, modifiche o richieste di chiarimenti.</p>
+      <a href="mailto:flareo.agency@gmail.com?subject=Effegomma · Rispondo alla proposta" class="btn-primary">
+        scrivici oggi <span class="mono">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+     ============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">FLAREO<span class="accent">®</span></div>
+        <p class="footer-tagline">Studio di design e sviluppo AI-powered. Costruiamo siti tecnici per aziende manifatturiere italiane che hanno competenze da raccontare.</p>
+      </div>
+      <div class="footer-col">
+        <h4>// CONTATTI</h4>
+        <ul>
+          <li><a href="mailto:flareo.agency@gmail.com">flareo.agency@gmail.com</a></li>
+          <li><a href="https://flareo.studio" target="_blank">flareo.studio</a></li>
+          <li>Aldo — CEO</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>// DOC META</h4>
+        <ul>
+          <li>REF · EG-2026-01</li>
+          <li>DATE · APR.2026</li>
+          <li>VALIDITY · 30D</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>// ISSUED TO</h4>
+        <ul>
+          <li>Effegomma S.r.l.</li>
+          <li>Fermignano · PU</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FLAREO® — Documento confidenziale</span>
+      <span>Effegomma · APR.2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll effect
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 20) nav.classList.add('scrolled');
+  else nav.classList.remove('scrolled');
+});
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
